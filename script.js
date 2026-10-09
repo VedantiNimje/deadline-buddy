@@ -786,6 +786,17 @@ function displayCalendar() {
     }
 }
 
+function previousDeadlineMonth() {
+    calendarDate.setMonth(calendarDate.getMonth() - 1);
+
+    displayDeadlineCalendar();
+}
+
+function nextDeadlineMonth() {
+    calendarDate.setMonth(calendarDate.getMonth() + 1);
+
+    displayDeadlineCalendar();
+}
 function previousMonth() {
     calendarDate.setMonth(
         calendarDate.getMonth() - 1
