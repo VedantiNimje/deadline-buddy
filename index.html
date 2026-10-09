@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Deadline Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+</head>
+
+
+<body>
+
+
+    <header class="topbar">
+
+    <div>
+        <h1>✦ Deadline Buddy</h1>
+        <p>Stay organized. Stay ahead. 🌷</p>
+    </div>
+
+    <div class="topbar-buttons">
+
+        <button
+            class="theme-button"
+            onclick="toggleDarkMode()"
+            id="themeButton"
+        >
+            🌙
+        </button>
+
+        <button
+            class="view-deadlines-button"
+            onclick="window.location.href='dashboard.html'"
+        >
+            🏠 Dashboard
+        </button>
+
+        <button
+            class="view-deadlines-button"
+            onclick="window.location.href='deadline.html'"
+        >
+            📋 My Deadlines
+        </button>
+
+    </div>
+
+</header>
+
+
+
+    <main>
+
+
+        <!-- Welcome -->
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    WELCOME TO DEADLINE BUDDY 👋
+                </p>
+
+                <h2>
+                    Never miss what's important.
+                </h2>
+
+                <p class="welcome-text">
+                    Whether you're a student, working professional,
+                    or just managing everyday life, Deadline Buddy
+                    helps you stay on top of your deadlines.
+                </p>
+
+            </div>
+
+
+            <div class="welcome-icon">
+                ✦
+            </div>
+
+        </section>
+
+
+
+        <!-- User Type -->
+
+        <section class="user-type-section">
+
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="small-text">
+                        GET STARTED
+                    </p>
+
+                    <h2>
+                        What are you using Deadline Buddy for?
+                    </h2>
+
+                </div>
+
+
+                <span class="title-icon">
+                    ✦
+                </span>
+
+            </div>
+
+
+
+            <div class="user-type-grid">
+
+
+                <button
+                    class="user-type-card"
+                    onclick="selectUserType('school',this)"
+                >
+
+                    <span>🎒</span>
+
+                    <strong>
+                        School Student
+                    </strong>
+
+                    <small>
+                        Assignments, exams & projects
+                    </small>
+
+                </button>
+
+
+
+                <button
+                    class="user-type-card"
+                    onclick="selectUserType('college',this)"
+                >
+
+                    <span>🎓</span>
+
+                    <strong>
+                        College Student
+                    </strong>
+
+                    <small>
+                        Subjects, projects & submissions
+                    </small>
+
+                </button>
+
+
+
+                <button
+                    class="user-type-card"
+                    onclick="selectUserType('office',this)"
+                >
+
+                    <span>💼</span>
+
+                    <strong>
+                        Office / Work
+                    </strong>
+
+                    <small>
+                        Projects, reports & work tasks
+                    </small>
+
+                </button>
+
+
+
+                <button
+                    class="user-type-card"
+                    onclick="selectUserType('personal',this)"
+                >
+
+                    <span>🏠</span>
+
+                    <strong>
+                        Personal / Home
+                    </strong>
+
+                    <small>
+                        Bills, appointments & home tasks
+                    </small>
+
+                </button>
+
+
+
+                <button
+                    class="user-type-card"
+                    onclick="selectUserType('other',this)"
+                >
+
+                    <span>✨</span>
+
+                    <strong>
+                        Other
+                    </strong>
+
+                    <small>
+                        Anything you want to remember
+                    </small>
+
+                </button>
+
+
+            </div>
+
+
+
+            <p
+                id="selectedUserType"
+                class="selected-user-type"
+            >
+                Please choose an option above.
+            </p>
+
+
+
+            <button
+                id="continueButton"
+                class="add-button"
+                onclick="continueToDashboard()"
+                disabled
+            >
+                Continue →
+            </button>
+
+
+        </section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+            Made with ♡ for everyone
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

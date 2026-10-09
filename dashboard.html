@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Deadline Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Header -->
+
+<header class="topbar">
+
+    <div>
+        <h1>✦ Deadline Buddy</h1>
+        <p>Stay organized. Stay ahead. 🌷</p>
+    </div>
+
+    <div class="topbar-buttons">
+
+        <button
+            class="theme-button"
+            onclick="toggleDarkMode()"
+            id="themeButton"
+        >
+            🌙
+        </button>
+
+        <button
+            class="view-deadlines-button"
+            onclick="window.location.href='deadline.html'"
+        >
+            📋 My Deadlines
+        </button>
+
+    </div>
+
+</header>
+
+    <main>
+
+
+        <!-- Welcome Section -->
+
+        <section class="welcome">
+    <div>
+        <p class="small-text" id="welcomeSmallText">
+            WELCOME BACK 👋
+        </p>
+
+        <h2 id="welcomeHeading">
+            Let's get things done.
+        </h2>
+
+        <p class="welcome-text" id="welcomeDescription">
+            Keep track of everything important without the stress.
+        </p>
+    </div>
+
+    <div class="welcome-icon">
+        ✦
+    </div>
+</section>
+
+
+
+        <!-- Add Deadline -->
+
+        <section class="add-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="small-text">
+                        PLAN AHEAD
+                    </p>
+
+                    <h2>
+                        Add a Deadline
+                    </h2>
+
+                </div>
+
+
+                <span class="title-icon">
+                    ＋
+                </span>
+
+            </div>
+
+
+
+            <div class="form-grid">
+
+
+                <div class="input-group">
+
+                    <label id="categoryLabel">
+                        Category
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        placeholder="e.g. Computer Networks"
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label>
+                        Task
+                    </label>
+
+                    <input
+                        type="text"
+                        id="task"
+                        placeholder="e.g. Complete assignment"
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label>
+                        Due Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="date"
+                    >
+
+                </div>
+
+
+
+                <div class="input-group">
+
+                    <label>
+                        Priority
+                    </label>
+
+                    <select id="priority">
+
+                        <option value="High">
+                            🔴 High Priority
+                        </option>
+
+                        <option value="Medium">
+                            🟠 Medium Priority
+                        </option>
+
+                        <option value="Low">
+                            🟢 Low Priority
+                        </option>
+
+                    </select>
+
+                </div>
+                <div class="input-group">
+
+    <label>
+        Reminder
+    </label>
+
+    <select id="reminder">
+
+        <option value="none">
+            🔕 No Reminder
+        </option>
+
+        <option value="1week">
+            🔔 1 Week Before
+        </option>
+
+        <option value="2days">
+            🔔 2 Days Before
+        </option>
+
+        <option value="1day">
+            🔔 1 Day Before
+        </option>
+
+        <option value="due">
+            🔔 On Due Date
+        </option>
+
+    </select>
+
+</div>
+            
+
+
+
+            <button
+                class="add-button"
+                onclick="addDeadline()"
+            >
+
+                Add Deadline ✦
+
+            </button>
+            
+
+        </section>
+
+
+
+        <!-- Dashboard Summary -->
+
+        <section class="dashboard">
+
+
+            <div class="stat-card">
+
+                <span>📚</span>
+
+                <div>
+
+                    <h3 id="totalCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Total
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>⏳</span>
+
+                <div>
+
+                    <h3 id="pendingCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Pending
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <span>✅</span>
+
+                <div>
+
+                    <h3 id="completedCount">
+                        0
+                    </h3>
+
+                    <p>
+                        Completed
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="stat-card">
+            <span>🔴</span>
+            <div>
+             <h3 id="overdueCount">0</h3>
+             <p>Overdue</p>
+             </div>
+             </div>
+        </section>
+
+
+
+        <!-- Progress -->
+
+        <section class="progress-section">
+
+
+            <div class="progress-header">
+
+                <div>
+
+                    <p class="small-text">
+                        YOUR PROGRESS
+                    </p>
+
+                    <h2>
+                        Keep going! 🌷
+                    </h2>
+
+                </div>
+
+
+                <strong id="progressText">
+                    0%
+                </strong>
+
+            </div>
+
+
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+
+        </section>
+
+        <section class="calendar-section">
+
+    <div class="section-title">
+        <div>
+            <p class="small-text">PLAN YOUR MONTH</p>
+            <h2>📅 Deadline Calendar</h2>
+        </div>
+
+        <span class="title-icon">✦</span>
+    </div>
+
+    <div class="calendar-header">
+
+        <button onclick="previousMonth()">
+            ←
+        </button>
+
+        <h2 id="calendarMonth">
+            October 2026
+        </h2>
+
+        <button onclick="nextMonth()">
+            →
+        </button>
+
+    </div>
+
+    <div class="calendar-weekdays">
+        <div>Sun</div>
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+    </div>
+
+    <div id="calendarDays" class="calendar-days">
+        <!-- Calendar days will appear here -->
+    </div>
+
+</section>
+
+
+    </main>
+
+
+
+    <footer>
+
+        <p>
+            Made with ♡ for everyone
+        </p>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+    <!-- Deadline Details Popup -->
+<div id="deadlineModal" class="deadline-modal">
+
+    <div class="deadline-modal-content">
+
+        <button
+            class="deadline-modal-close"
+            onclick="closeDeadlineModal()"
+        >
+            ×
+        </button>
+
+        <h2>📌 Deadline Details</h2>
+
+        <div id="deadlineModalDetails"></div>
+
+        <button
+            class="deadline-modal-button"
+            onclick="closeDeadlineModal()"
+        >
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>

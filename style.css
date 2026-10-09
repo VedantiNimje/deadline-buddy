@@ -1,0 +1,1807 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(circle at 10% 10%, #dff5ec 0, transparent 28%),
+        radial-gradient(circle at 90% 20%, #ffe5ed 0, transparent 25%),
+        radial-gradient(circle at 50% 100%, #fff1cf 0, transparent 30%),
+        #fbfaf7;
+
+    color: #34433d;
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+}
+
+.topbar {
+
+    padding: 25px 8%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.78);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid #e9e4df;
+
+    position: relative;
+}
+
+
+.topbar::after {
+
+    content: "✦";
+
+    position: absolute;
+
+    right: 7%;
+    top: 15px;
+
+    font-size: 20px;
+
+    color: #e7a7bb;
+
+    transform: rotate(15deg);
+}
+
+
+.topbar h1 {
+
+    font-size: 29px;
+
+    color: #3d6657;
+
+    letter-spacing: -0.7px;
+}
+
+
+.topbar p {
+
+    margin-top: 6px;
+
+    color: #87948e;
+
+    font-size: 14px;
+}
+.topbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+main {
+
+    width: 90%;
+
+    max-width: 900px;
+
+    margin: 35px auto;
+}
+
+.welcome {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e1f3eb,
+            #fff0e9,
+            #f9e9f0
+        );
+
+    padding: 35px;
+
+    border-radius: 28px;
+
+    margin-bottom: 25px;
+
+    border: 1px solid #e8e1df;
+
+    box-shadow:
+        0 12px 30px rgba(70, 80, 70, 0.07);
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.welcome::before {
+    content: "✦";
+
+    position: absolute;
+
+    right: 150px;
+    top: 18px;
+
+    font-size: 22px;
+
+    color: #e6a8ba;
+}
+
+
+.welcome::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: 115px;
+    bottom: 15px;
+
+    font-size: 20px;
+
+    color: #9bbcae;
+}
+
+
+.small-text {
+    font-size: 11px;
+
+    letter-spacing: 1.7px;
+
+    color: #74877e;
+
+    font-weight: 700;
+
+    margin-bottom: 7px;
+}
+
+
+.welcome h2 {
+    font-size: 30px;
+
+    color: #315448;
+
+    margin: 0 0 8px 0;
+
+    line-height: 1.25;
+}
+
+
+.welcome-text {
+    color: #77847f;
+
+    font-size: 14px;
+
+    max-width: 500px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+.welcome-icon {
+    font-size: 50px;
+
+    background: rgba(255, 255, 255, 0.72);
+
+    width: 95px;
+
+    height: 95px;
+
+    border-radius: 30px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    transform: rotate(3deg);
+
+    box-shadow:
+        0 8px 20px rgba(80, 100, 90, 0.08);
+
+    flex-shrink: 0;
+}
+
+
+section {
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid #e9e7e2;
+
+    border-radius: 24px;
+
+    padding: 28px;
+
+    margin-bottom: 25px;
+
+    box-shadow:
+        0 10px 28px rgba(60, 80, 70, 0.06);
+}
+
+
+.section-title {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+}
+
+
+.section-title h2 {
+
+    font-size: 21px;
+
+    color: #354d44;
+}
+
+
+.title-icon {
+
+    width: 43px;
+
+    height: 43px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 14px;
+
+    background: #edf7f2;
+
+    color: #5b8875;
+
+    font-size: 21px;
+
+    box-shadow:
+        0 5px 12px rgba(80, 120, 100, 0.08);
+}
+
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.input-group label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #65766f;
+
+    margin-bottom: 7px;
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 14px;
+
+    border: 1px solid #dfe7e3;
+
+    background: #fcfdfc;
+
+    color: #354941;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: 0.25s;
+}
+
+
+input:hover,
+select:hover {
+
+    border-color: #b8d2c6;
+}
+
+
+input:focus,
+select:focus {
+
+    border-color: #78a994;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(120, 169, 148, 0.12);
+}
+
+
+input::placeholder {
+
+    color: #abb6b1;
+}
+
+.add-button {
+
+    width: 100%;
+
+    margin-top: 23px;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5c927c,
+            #78a88f
+        );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: 0.25s;
+
+    box-shadow:
+        0 8px 18px rgba(80, 140, 115, 0.2);
+}
+
+
+.add-button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 22px rgba(80, 140, 115, 0.25);
+}
+
+
+.add-button:active {
+
+    transform: translateY(0);
+}
+.dashboard {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    background: transparent;
+
+    border: none;
+
+    box-shadow: none;
+
+    padding: 0;
+}
+
+
+.stat-card {
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border: 1px solid #e9e7e2;
+
+    border-radius: 20px;
+
+    padding: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    box-shadow:
+        0 8px 20px rgba(60, 80, 70, 0.05);
+
+    transition: 0.2s;
+}
+
+
+.stat-card:hover {
+
+    transform: translateY(-3px);
+}
+
+
+.stat-card > span {
+
+    width: 45px;
+
+    height: 45px;
+
+    border-radius: 14px;
+
+    background: #edf7f2;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+}
+
+
+.stat-card h3 {
+
+    font-size: 23px;
+
+    color: #3b5e50;
+}
+
+
+.stat-card p {
+
+    font-size: 12px;
+
+    color: #89958f;
+
+    margin-top: 3px;
+}
+
+.progress-section {
+
+    margin-top: 0;
+}
+
+
+.progress-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+.progress-header h2 {
+
+    font-size: 19px;
+
+    color: #354d44;
+}
+
+
+.progress-header strong {
+
+    color: #5d8d77;
+
+    font-size: 21px;
+
+    background: #edf7f2;
+
+    padding: 6px 11px;
+
+    border-radius: 10px;
+}
+
+
+.progress-bar {
+
+    width: 100%;
+
+    height: 13px;
+
+    background: #edf0ed;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+#progressFill {
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            #6fa58c,
+            #91c1a9
+        );
+
+    border-radius: 20px;
+
+    transition: width 0.5s ease;
+}
+
+
+.deadline-card {
+    position: relative;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f8fcfa
+    );
+
+    border: 1px solid #e2ebe6;
+
+    border-left: 5px solid #9bc7b5;
+
+    border-radius: 22px;
+
+    padding: 24px 26px;
+
+    margin-bottom: 18px;
+
+    box-shadow:
+        0 8px 24px rgba(70, 90, 80, 0.07);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.deadline-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px rgba(70, 90, 80, 0.10);
+}
+
+
+.deadline-card h3 {
+    margin: 0 0 14px 0;
+    font-size: 20px;
+    color: #294f42;
+    font-weight: 750;
+    text-transform: capitalize;
+    letter-spacing: 0.2px;
+}
+
+.deadline-card p {
+    margin: 9px 0;
+    color: #475e56;
+    font-size: 14px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+.deadline-card p:not(.priority-badge):not(.countdown-badge) {
+    color: #030404;
+}
+
+.deadline-card p:not(.priority-badge):not(.countdown-badge)::first-letter {
+    font-size: 15px;
+}
+
+
+.deadline-card p:last-of-type {
+    color: #5e796d;
+
+    font-weight: 600;
+}
+
+
+.deadline-card button {
+    border: none;
+
+    padding: 10px 16px;
+
+    margin-top: 14px;
+
+    margin-right: 8px;
+
+    border-radius: 12px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.deadline-card button:first-of-type {
+    background: #e4f2eb;
+
+    color: #416b5a;
+}
+
+
+.deadline-card button:last-of-type {
+    background: #f8e9ed;
+
+    color: #8a5967;
+}
+
+
+.deadline-card button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 12px rgba(70, 80, 70, 0.08);
+}
+
+.deadline-card:has(button:first-of-type:only-child) {
+    opacity: 0.75;
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 28px;
+
+    color: #98a39e;
+
+    font-size: 12px;
+}
+
+
+footer p::before {
+
+    content: "✦  ";
+}
+
+
+@media (max-width: 650px) {
+
+    .topbar {
+
+        padding: 22px 6%;
+    }
+
+
+    .topbar h1 {
+
+        font-size: 23px;
+    }
+
+
+    main {
+
+        width: 92%;
+
+        margin-top: 22px;
+    }
+
+
+    .welcome {
+
+        padding: 24px;
+
+        border-radius: 22px;
+    }
+
+
+    .welcome h2 {
+
+        font-size: 23px;
+    }
+
+
+    .welcome-text {
+
+        font-size: 13px;
+    }
+
+
+    .welcome-icon {
+
+        width: 65px;
+
+        height: 65px;
+
+        font-size: 35px;
+
+        border-radius: 20px;
+    }
+
+
+    .welcome::before,
+    .welcome::after {
+
+        display: none;
+    }
+
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    section {
+
+        padding: 22px;
+
+        border-radius: 20px;
+    }
+
+
+    .dashboard {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .stat-card {
+
+        padding: 17px;
+    }
+}
+
+.user-type-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.user-type-card {
+    border: 1px solid #e1ebe6;
+    background: #fbfdfc;
+    border-radius: 18px;
+    padding: 18px;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    text-align: left;
+
+    transition: 0.25s;
+
+    color: #354d44;
+}
+
+.user-type-card span {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.user-type-card strong {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.user-type-card small {
+    font-size: 11px;
+    color: #89958f;
+    line-height: 1.5;
+}
+
+.user-type-card:hover {
+    transform: translateY(-3px);
+    border-color: #a8cbbb;
+
+    box-shadow:
+        0 8px 20px rgba(60, 100, 80, 0.08);
+}
+
+.user-type-card.selected {
+    border-color: #78a994;
+    background: #edf7f2;
+
+    box-shadow:
+        0 0 0 3px rgba(120, 169, 148, 0.12);
+}
+
+.selected-user-type {
+    margin-top: 15px;
+
+    text-align: center;
+
+    font-size: 13px;
+    color: #74827d;
+}
+
+
+@media (max-width: 650px) {
+
+    .user-type-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+.priority-badge {
+    display: block;
+
+    width: fit-content;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px !important;
+
+    font-weight: 700;
+
+    margin-top: 12px !important;
+
+    margin-bottom: 7px !important;
+}
+
+
+.priority-high {
+    background: #f8e1e5;
+
+    color: #9a5d6b !important;
+}
+
+
+
+.priority-medium {
+    background: #f8ecd9;
+
+    color: #9a7650 !important;
+}
+
+
+
+.priority-low {
+    background: #e2f1e9;
+
+    color: #557967 !important;
+}
+
+
+.countdown-badge {
+    display: block;
+
+    width: fit-content;
+
+    padding: 7px 14px;
+
+    border-radius: 20px;
+
+    background: #edf6f1;
+
+    color: #527365 !important;
+
+    font-size: 12px !important;
+
+    font-weight: 700;
+
+    margin-top: 4px !important;
+
+    margin-bottom: 8px !important;
+}
+
+.filter-bar {
+
+    display: grid;
+
+    grid-template-columns: 1fr 190px 190px;
+
+    gap: 12px;
+
+    margin: 22px 0;
+
+}
+
+
+.filter-bar input,
+.filter-bar select {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border: 1px solid #d1efe2;
+
+    border-radius: 14px;
+
+    background: #ffffff;
+
+    color: #17b087;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    cursor: pointer;
+
+}
+
+
+.filter-bar input::placeholder {
+
+    color: #7b8c86;
+
+}
+
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+
+    border-color: #6fa895;
+
+    box-shadow:
+        0 0 0 3px rgba(228, 236, 233, 0.15);
+
+}
+
+
+
+
+.dark-mode .filter-bar input,
+.dark-mode .filter-bar select {
+
+    background: #0b0d0d;
+
+    color: #f3f7f5;
+
+    border-color: #040505;
+
+}
+
+
+.dark-mode .filter-bar input::placeholder {
+
+    color: #b7c5c0;
+
+}
+
+
+.dark-mode .filter-bar select option {
+
+    background: #dce3e1;
+
+    color: #080a09;
+
+}
+
+
+
+@media (max-width: 700px) {
+
+    .filter-bar {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .filter-bar input,
+    .filter-bar select {
+
+        width: 100%;
+
+    }
+
+}
+
+.no-results {
+    text-align: center;
+    padding: 30px;
+    color: #84958d;
+    background: #f8fbf9;
+    border-radius: 18px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.calendar-header h2 {
+    margin: 0;
+    color: #315448;
+    font-size: 20px;
+}
+
+.calendar-header button {
+    border: none;
+    width: 38px;
+    height: 38px;
+    border-radius: 12px;
+    background: #e4f2eb;
+    color: #416b5a;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.calendar-header button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(70, 80, 70, 0.08);
+}
+
+.calendar-weekdays,
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.calendar-weekdays {
+    margin-bottom: 8px;
+}
+
+.calendar-weekdays div {
+    text-align: center;
+    color: #789087;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 0;
+}
+
+.calendar-day {
+    min-height: 90px;
+    padding: 10px;
+    background: #fbfdfc;
+    border: 1px solid #e5eee9;
+    border-radius: 14px;
+    box-sizing: border-box;
+    transition: 0.2s ease;
+}
+
+.calendar-day:hover {
+    background: #f2f8f5;
+    transform: translateY(-2px);
+}
+
+.calendar-day.empty {
+    background: transparent;
+    border: none;
+}
+
+.calendar-date-number {
+    display: block;
+    color: #49675b;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.calendar-deadline {
+    background: #e4f2eb;
+    color: #416b5a;
+    padding: 5px 7px;
+    border-radius: 8px;
+    font-size: 10px;
+    font-weight: 600;
+    margin-top: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@media (max-width: 700px) {
+
+    .calendar-weekdays,
+    .calendar-days {
+        gap: 4px;
+    }
+
+    .calendar-day {
+        min-height: 65px;
+        padding: 6px;
+    }
+
+    .calendar-deadline {
+        font-size: 8px;
+        padding: 4px;
+    }
+
+    .calendar-date-number {
+    font-size: 11px;
+}
+}
+
+.my-deadlines-button {
+    display: inline-block;
+    margin: 4px 0 20px 0;
+    padding: 11px 18px;
+    border-radius: 14px;
+    background: #e4f2eb;
+    color: #416b5a;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    transition: 0.2s ease;
+}
+
+.my-deadlines-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(70, 80, 70, 0.08);
+}
+
+.page-back-button {
+    border: none;
+    padding: 11px 18px;
+    border-radius: 14px;
+    background: #e4f2eb;
+    color: #416b5a;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.page-back-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(70, 80, 70, 0.08);
+}
+.countdown-badge {
+    transition: 0.2s ease;
+}
+
+.urgency-overdue {
+    background: #ffe1e1;
+    color: #b83232;
+    font-weight: 700;
+}
+
+.urgency-today {
+    background: #ffdede;
+    color: #b83232;
+    font-weight: 700;
+}
+
+.urgency-tomorrow {
+    background: #fff0d6;
+    color: #b66a00;
+    font-weight: 700;
+}
+
+.urgency-soon {
+    background: #fff8d8;
+    color: #8a7200;
+    font-weight: 700;
+}
+
+.urgency-normal {
+    background: #e3f3e9;
+    color: #397052;
+}
+
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.view-toggle-btn {
+    border: none;
+    padding: 10px 18px;
+    border-radius: 12px;
+    background: #f1f3f5;
+    color: #555;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s ease;
+}
+
+.view-toggle-btn:hover {
+    transform: translateY(-1px);
+}
+
+.view-toggle-btn.active {
+    background: #dcefe7;
+    color: #397052;
+    font-weight: 600;
+}
+
+.deadline-calendar-view {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+.deadline-calendar-view .calendar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.deadline-calendar-view .calendar-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.deadline-calendar-view .calendar-header button {
+    border: none;
+    background: #eef6f2;
+    border-radius: 10px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+.deadline-calendar-view .calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.deadline-calendar-view .calendar-weekdays span {
+    font-size: 12px;
+    font-weight: 600;
+    color: #777;
+}
+
+
+.deadline-calendar-view .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+
+.deadline-calendar-view .calendar-day {
+    min-height: 75px;
+    background: #fafcfb;
+    border: 1px solid #edf1ef;
+    border-radius: 12px;
+    padding: 8px;
+    font-size: 13px;
+}
+
+.deadline-calendar-view .calendar-day strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.deadline-calendar-view .calendar-day.empty {
+    background: transparent;
+    border: none;
+}
+
+
+.calendar-deadline {
+    background: #e3f3e9;
+    color: #397052;
+    border-radius: 6px;
+    padding: 4px 5px;
+    margin-top: 4px;
+    font-size: 11px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.deadline-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(40, 60, 50, 0.35);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+.deadline-modal.show {
+    display: flex;
+}
+
+.deadline-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 420px;
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 28px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    animation: popupAppear 0.2s ease;
+}
+
+.deadline-modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #397052;
+}
+
+.deadline-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    border: none;
+    background: #f1f5f3;
+    color: #555;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.deadline-detail-item {
+    background: #f7faf8;
+    border-radius: 12px;
+    padding: 12px 14px;
+    margin-bottom: 10px;
+}
+
+.deadline-detail-label {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 3px;
+}
+
+.deadline-detail-value {
+    font-size: 15px;
+    font-weight: 600;
+    color: #333;
+}
+
+.deadline-modal-button {
+    width: 100%;
+    border: none;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #dcefe7;
+    color: #397052;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.deadline-modal-button:hover {
+    background: #cde5da;
+}
+
+@keyframes popupAppear {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.view-deadlines-button {
+    border: none;
+    padding: 12px 20px;
+    margin-top: 10px;
+    border-radius: 14px;
+    background: #e3f3e9;
+    color: #397052;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.view-deadlines-button:hover {
+    background: #cde5da;
+    transform: translateY(-2px);
+}
+.view-deadlines-button {
+    border: none;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: #e3f3e9;
+    color: #397052;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.view-deadlines-button:hover {
+    background: #cde5da;
+    transform: translateY(-2px);
+}
+
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 0 12px;
+    }
+
+    .topbar {
+        padding: 16px 5px;
+        gap: 10px;
+    }
+
+    .topbar h1 {
+        font-size: 22px;
+    }
+
+    .topbar p {
+        font-size: 12px;
+    }
+
+    .view-deadlines-button {
+        padding: 8px 11px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .welcome {
+        padding: 20px;
+    }
+
+    .welcome h2 {
+        font-size: 22px;
+    }
+
+    .welcome-text {
+        font-size: 13px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .stat-card {
+        padding: 14px;
+    }
+
+    .stat-card h3 {
+        font-size: 20px;
+    }
+
+    .calendar-section {
+        padding: 15px;
+    }
+
+    .calendar-days {
+        gap: 4px;
+    }
+
+    .calendar-day {
+        min-height: 55px;
+        padding: 5px;
+        font-size: 11px;
+    }
+
+    .calendar-weekdays {
+        gap: 4px;
+        font-size: 11px;
+    }
+
+    .calendar-deadline {
+        font-size: 9px;
+        padding: 3px;
+    }
+
+    .deadline-modal-content {
+        width: 88%;
+        padding: 22px;
+    }
+    .topbar-buttons {
+    gap: 6px;
+}
+
+.view-deadlines-button {
+    padding: 8px 10px;
+    font-size: 11px;
+}
+
+.theme-button {
+    width: 36px;
+    height: 36px;
+}
+
+}
+
+.topbar-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.theme-button {
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: #eef6f2;
+    color: #397052;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.theme-button:hover {
+    transform: translateY(-2px);
+}
+
+
+body.dark-mode {
+    background: #141b1a;
+    color: #f1f5f3;
+}
+
+body.dark-mode .topbar {
+    background: #1b2623;
+}
+
+body.dark-mode .topbar h1,
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #e6f4ed;
+}
+
+body.dark-mode p,
+body.dark-mode label {
+    color: #b9c9c2;
+}
+
+
+body.dark-mode .welcome,
+body.dark-mode .add-section,
+body.dark-mode .stat-card,
+body.dark-mode .progress-section,
+body.dark-mode .calendar-section,
+body.dark-mode .deadline-calendar-view {
+    background: #1b2623;
+    color: #f1f5f3;
+}
+
+
+body.dark-mode input,
+body.dark-mode select {
+    background: #24332e;
+    color: #f1f5f3;
+    border-color: #3b4d45;
+}
+
+body.dark-mode input::placeholder {
+    color: #82948c;
+}
+
+
+body.dark-mode .calendar-day {
+    background: #202e2a;
+    border-color: #34453e;
+}
+
+body.dark-mode .calendar-day.empty {
+    background: transparent;
+}
+
+body.dark-mode .calendar-weekdays div,
+body.dark-mode .calendar-weekdays span {
+    color: #9fb1a8;
+}
+
+body.dark-mode .calendar-header button {
+    background: #2b3c36;
+    color: #dff3e8;
+}
+
+
+body.dark-mode .view-deadlines-button,
+body.dark-mode .theme-button {
+    background: #2d463c;
+    color: #dff6e8;
+}
+
+body.dark-mode .view-deadlines-button:hover,
+body.dark-mode .theme-button:hover {
+    background: #3a574b;
+}
+
+
+body.dark-mode .add-button {
+    background: #76b89a;
+    color: #14201b;
+}
+
+
+body.dark-mode .progress-bar {
+    background: #2d3c37;
+}
+
+
+body.dark-mode .deadline-card {
+    background: #ebeff0;
+    border-color: #0c0e0d;
+}
+
+
+body.dark-mode .deadline-modal-content {
+    background: #1b2623;
+    color: #f1f5f3;
+}
+
+body.dark-mode .deadline-detail-item {
+    background: #24332e;
+}
+
+body.dark-mode .deadline-detail-label {
+    color: #91a69c;
+}
+
+body.dark-mode .deadline-detail-value {
+    color: #f1f5f3;
+}
+
+body.dark-mode .deadline-modal-close {
+    background: #2b3c36;
+    color: #f1f5f3;
+}
+
+body.dark-mode .deadline-modal-button {
+    background: #76b89a;
+    color: #14201b;
+}
+
+body.dark-mode footer {
+    color: #91a69c;
+}
+/* ☀️ LIGHT MODE */
+.deadlines-section {
+    background: #f1f8f5;
+    color: #263a35;
+}
+
+.deadlines-section h2 {
+    color: #263a35;
+}
+
+.deadline-card {
+    background: #ffffff;
+    color: #263a35;
+}
+
+
+/* 🌙 DARK MODE */
+.dark-mode .deadlines-section {
+    background: #080909;
+    color: #080908;
+}
+
+.dark-mode .deadlines-section h2 {
+    color: #030303;
+}
+
+.dark-mode .deadline-card {
+    background: #24332f;
+    color: #070707;
+}
+.calendar-date-number {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    color: #49675b;
+    font-size: 13px;
+    font-weight: 700;
+}
+/* ========================================
+   CALENDAR DATE FIX
+======================================== */
+
+.calendar-days {
+    display: grid !important;
+    grid-template-columns: repeat(7, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+}
+
+.calendar-day {
+    min-height: 75px !important;
+    border-radius: 14px !important;
+    padding: 10px !important;
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    background: #f8fcfa !important;
+    border: 1px solid #e3eee9 !important;
+    box-sizing: border-box !important;
+}
+
+.calendar-day.empty {
+    background: transparent !important;
+    border: none !important;
+}
+
+.calendar-date-number {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    color: #355d50 !important;
+    background: transparent !important;
+    border: none !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    padding: 3px 6px !important;
+    cursor: pointer !important;
+}
+
+.calendar-day.today {
+    border: 2px solid #79b79d !important;
+    background: #eef8f3 !important;
+}
+
+.calendar-deadline {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    margin-top: 6px !important;
+    padding: 5px 7px !important;
+    border-radius: 7px !important;
+    background: #dff1e9 !important;
+    color: #355d50 !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+}
+
+.calendar-deadline.completed {
+    opacity: 0.6 !important;
+    text-decoration: line-through !important;
+}

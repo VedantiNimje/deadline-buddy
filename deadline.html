@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Deadlines - Deadline Buddy</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <div>
+            <h1>✦ Deadline Buddy</h1>
+            <p>Stay organized. Stay ahead. 🌷</p>
+        </div>
+<div class="topbar-buttons">
+
+    <button 
+        class="theme-button" 
+        onclick="toggleDarkMode()" 
+        id="themeButton">
+        🌙
+    </button>
+
+    <button 
+        class="page-back-button"
+        onclick="window.location.href='dashboard.html'">
+        ← Dashboard
+    </button>
+
+</div>
+
+</header>
+
+
+    <main>
+
+        <!-- PAGE INTRO -->
+
+        <section class="welcome">
+
+            <div>
+
+                <p class="small-text">
+                    YOUR TASKS
+                </p>
+
+                <h2>
+                    My Deadlines
+                </h2>
+
+                <p class="welcome-text">
+                    Keep track of everything important and stay on top of your tasks.
+                </p>
+
+            </div>
+
+            <div class="welcome-icon">
+                ♡
+            </div>
+
+        </section>
+
+
+        <!-- PROGRESS -->
+
+        <section class="progress-section">
+
+            <div class="progress-header">
+
+                <div>
+
+                    <p class="small-text">
+                        YOUR PROGRESS
+                    </p>
+
+                    <h2>
+                        Keep going! 🌷
+                    </h2>
+
+                </div>
+
+                <strong id="progressText">
+                    0%
+                </strong>
+
+            </div>
+
+            <div class="progress-bar">
+
+                <div id="progressFill"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ALL DEADLINES -->
+
+        <section class="deadline-section">
+
+            <div class="section-title">
+
+                <div>
+
+                    <p class="small-text">
+                        YOUR TASKS
+                    </p>
+
+                    <h2>
+                        All Deadlines
+                    </h2>
+
+                </div>
+
+                <span class="title-icon">
+                    ♡
+                </span>
+
+            </div>
+
+
+            <!-- SEARCH -->
+
+            <div class="filter-bar">
+
+                <input
+                    type="text"
+                    id="searchDeadline"
+                    placeholder="🔍 Search your deadlines..."
+                    oninput="filterDeadlines()"
+                >
+
+
+                <select
+                    id="statusFilter"
+                    onchange="filterDeadlines()">
+
+                    <option value="all">
+                        All Deadlines
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="completed">
+                        Completed
+                    </option>
+
+                </select>
+
+
+                <select
+                    id="priorityFilter"
+                    onchange="filterDeadlines()">
+
+                    <option value="all">
+                        All Priorities
+                    </option>
+
+                    <option value="High">
+                        🔴 High
+                    </option>
+
+                    <option value="Medium">
+                        🟠 Medium
+                    </option>
+
+                    <option value="Low">
+                        🟢 Low
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DEADLINES -->
+
+            <div id="deadlineList">
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Made with ♡ for everyone
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
