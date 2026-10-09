@@ -53,3 +53,14 @@ self.addEventListener("fetch", event => {
             })
     );
 });
+self.addEventListener("message", async (event) => {
+    if (event.data === "TEST_NOTIFICATION") {
+        await self.registration.showNotification(
+            "🌷 Deadline Buddy",
+            {
+                body: "Notifications are working on your phone!",
+                icon: "./icon-192.png"
+            }
+        );
+    }
+});
