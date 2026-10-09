@@ -24,12 +24,29 @@ function saveDeadlines() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(deadlines));
 }
 
-function requestNotificationPermission() {
-    if (!("Notification" in window)) return;
-
-    if (Notification.permission === "default") {
-        Notification.requestPermission();
+async function requestNotificationPermission() {
+    if (!("Notification" in window)) {
+        alert("This browser does not support notifications.");
+        return false;
     }
+
+    if (Notification.permission === "granted") {
+        return true;
+    }
+
+    if (Notification.permission === "denied") {
+        alert("Notifications are blocked. Please allow them in Chrome settings.");
+        return false;
+    }
+
+    const permission = await Notification.requestPermission();
+
+    if (permission !== "granted") {
+        alert("Please allow notifications to receive reminders.");
+        return false;
+    }
+
+    return true;
 }
 
 function getReminderDays(reminder) {
