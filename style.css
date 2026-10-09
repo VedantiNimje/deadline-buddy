@@ -1870,3 +1870,35 @@ body.dark-mode footer {
         overflow-wrap: anywhere;
     }
 }
+
+/* Fix calendar date numbers on mobile */
+@media screen and (max-width: 600px) {
+
+    .calendar-date-number {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        padding: 4px 0;
+        white-space: nowrap;
+        word-break: normal;
+        overflow-wrap: normal;
+        text-align: center;
+        font-size: 14px;
+        line-height: 1.4;
+        border: none;
+        box-sizing: border-box;
+    }
+
+    .calendar-day {
+        min-width: 0;
+        padding: 4px 2px;
+        overflow: hidden;
+    }
+
+    .calendar-deadline {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
