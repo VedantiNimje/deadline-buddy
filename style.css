@@ -1902,3 +1902,32 @@ body.dark-mode footer {
         white-space: nowrap;
     }
 }
+/* FINAL FIX: Keep calendar dates on one line on phones */
+@media screen and (max-width: 600px) {
+
+    .calendar-days {
+        grid-template-columns: repeat(7, minmax(0, 1fr)) !important;
+        gap: 4px !important;
+    }
+
+    .calendar-day {
+        min-width: 0 !important;
+        padding: 4px 0 !important;
+        overflow: visible !important;
+    }
+
+    .calendar-date-number {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 4px 0 !important;
+        font-size: 13px !important;
+        white-space: nowrap !important;
+        word-break: keep-all !important;
+        overflow-wrap: normal !important;
+        letter-spacing: normal !important;
+        box-sizing: border-box !important;
+    }
+}
