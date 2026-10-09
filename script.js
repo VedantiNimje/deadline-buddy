@@ -1379,3 +1379,35 @@ if ("serviceWorker" in navigator) {
             });
     });
 }
+document.addEventListener("DOMContentLoaded", () => {
+    const testBtn = document.getElementById("testNotificationBtn");
+
+    if (testBtn) {
+        testBtn.addEventListener("click", async () => {
+            if (!("serviceWorker" in navigator)) {
+                alert("Service workers are not supported.");
+                return;
+            }
+
+            const permission = await Notification.requestPermission();
+
+            if (permission !== "granted") {
+                alert("Please allow notifications in Chrome settings.");
+                return;
+            }
+
+            try {
+                const registration = await navigator.serviceWorker.ready;
+
+                await registration.showNotification("🌷 Deadline Buddy", {
+                    body: "Success! Notifications are working on your phone!",
+                    icon: "./icon-192.png"
+                });
+
+                alert("Test notification sent!");
+            } catch (error) {
+                alert("Notification test failed: " + error.message);
+            }
+        });
+    }
+});
