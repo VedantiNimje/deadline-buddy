@@ -117,12 +117,25 @@ function sendReminderNotifications() {
             reminderText = "Your deadline is due in 1 week.";
         }
 
-        new Notification("🌷 Deadline Buddy Reminder", {
-            body: `${deadline.task}\n${reminderText}`,
-            tag: `deadline-${deadline.id}`
+        if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.ready
+        .then(registration => {
+            return registration.showNotification(
+                "🌷 Deadline Buddy Reminder",
+                {
+                    body: `${deadline.task}\n${reminderText}`,
+                    icon: "./icon-192.png",
+                    tag: `deadline-${deadline.id}`
+                }
+            );
+        })
+        .then(() => {
+            localStorage.setItem(sentKey, "yes");
+        })
+        .catch(error => {
+            console.error("Notification error:", error);
         });
-
-        localStorage.setItem(sentKey, "yes");
+}
     });
 }
 
