@@ -1476,9 +1476,12 @@ async function setupFirebaseMessaging() {
         });
 
         if (token) {
-    console.log("Firebase push subscription created successfully.");
-} else {
-    console.log("No push token was created.");
-}
+            console.log("Firebase push subscription created successfully.");
+        } else {
+            console.log("No push token was created.");
+        }
+
+    } catch (error) {
+        console.error("Firebase messaging setup failed:", error);
     }
 }
