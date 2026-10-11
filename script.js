@@ -99,8 +99,16 @@ function sendReminderNotifications() {
 
         const reminderDate = getReminderDate(deadline);
 
-        if (!reminderDate || reminderDate !== today) return;
+       if (!reminderDate || reminderDate !== today) return;
 
+if (deadline.reminderTime) {
+    const [hours, minutes] = deadline.reminderTime.split(":").map(Number);
+    const now = new Date();
+    const reminderTime = new Date();
+    reminderTime.setHours(hours, minutes, 0, 0);
+
+    if (now < reminderTime) return;
+}
         const sentKey = `deadlineReminderSent_${deadline.id}_${reminderDate}`;
 
         if (localStorage.getItem(sentKey) === "yes") return;
@@ -141,7 +149,7 @@ function sendReminderNotifications() {
 
 function startReminderChecker() {
     sendReminderNotifications();
-    setInterval(sendReminderNotifications, 60 * 1000);
+    setInterval(sendReminderNotifications, 5 * 1000);
 }
 
 function getCurrentUserType() {
@@ -162,6 +170,7 @@ function addDeadline() {
     const subjectInput = document.getElementById("subject");
     const taskInput = document.getElementById("task");
     const dateInput = document.getElementById("date");
+    const reminderTimeInput = document.getElementById("reminderTime");
     const priorityInput = document.getElementById("priority");
     const reminderInput = document.getElementById("reminder");
 
@@ -178,6 +187,9 @@ function addDeadline() {
     const subject = formatText(subjectInput.value);
     const task = formatText(taskInput.value);
     const date = dateInput.value;
+    const reminderTime = reminderTimeInput
+    ? reminderTimeInput.value
+    : "09:00";
     const priority = priorityInput.value;
     const reminder = reminderInput.value;
 
@@ -187,15 +199,15 @@ function addDeadline() {
     }
 
     const deadline = {
-        id: Date.now(),
-        subject: subject,
-        task: task,
-        date: date,
-        priority: priority,
-        reminder: reminder,
-        completed: false
-    };
-
+    id: Date.now(),
+    subject,
+    task,
+    date,
+    priority,
+    reminder,
+    reminderTime,
+    completed: false
+};
     deadlines.push(deadline);
     saveDeadlines();
 
