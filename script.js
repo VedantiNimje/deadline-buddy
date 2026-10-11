@@ -1450,38 +1450,3 @@ const firebaseConfig = {
 if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
 }
-// Firebase Cloud Messaging setup
-async function setupFirebaseMessaging() {
-    try {
-        if (!("serviceWorker" in navigator) || !("Notification" in window)) {
-            console.log("Notifications are not supported in this browser.");
-            return;
-        }
-
-        const permission = await Notification.requestPermission();
-
-        if (permission !== "granted") {
-            console.log("Notification permission was not granted.");
-            return;
-        }
-
-        const registration = await navigator.serviceWorker.register("./sw.js");
-        await navigator.serviceWorker.ready;
-
-        const messaging = firebase.messaging();
-
-        const token = await messaging.getToken({
-            vapidKey: "BI2LOuYlkojI4NzuGfoapxRWaOh_51YE-w-vKfGIxiW1qjP9gL64vQ2xKwHf-A3MC5pp2NeO9Xdy0JfJJxTJM3M",
-            serviceWorkerRegistration: registration
-        });
-
-        if (token) {
-            console.log("Firebase push subscription created successfully.");
-        } else {
-            console.log("No push token was created.");
-        }
-
-    } catch (error) {
-        console.error("Firebase messaging setup failed:", error);
-    }
-}
