@@ -1436,6 +1436,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+// Initialize Firebase
+const firebaseConfig = {
+    apiKey: "AIzaSyD1TlKdRD36_xR2hAm_HZRRO2YUK7dph-E",
+    authDomain: "deadline-buddy-e615b.firebaseapp.com",
+    projectId: "deadline-buddy-e615b",
+    storageBucket: "deadline-buddy-e615b.firebasestorage.app",
+    messagingSenderId: "586619181939",
+    appId: "1:586619181939:web:223556fa72b7e3f5c70306",
+    measurementId: "G-VKTKW9F42P"
+};
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
 // Firebase Cloud Messaging setup
 async function setupFirebaseMessaging() {
     try {
@@ -1462,12 +1476,9 @@ async function setupFirebaseMessaging() {
         });
 
         if (token) {
-            console.log("Firebase push subscription created successfully.");
-            console.log("Push token:", token);
-        } else {
-            console.log("No push token was created.");
-        }
-    } catch (error) {
-        console.error("Firebase messaging setup failed:", error);
+    console.log("Firebase push subscription created successfully.");
+} else {
+    console.log("No push token was created.");
+}
     }
 }
